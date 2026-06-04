@@ -17,14 +17,16 @@
     </div>
   </div>
 
-  <nav>
-    <a href="#sluzby">Služby</a>
-    <a href="#cenik">Ceník</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+  <button class="menu-toggle" id="menu-toggle">☰ Menu</button>
 
-  <a class="phone-top" href="tel:+420607939271">607 939 271</a>
+<nav id="nav-menu" class="nav-menu">
+  <a href="#sluzby">Služby</a>
+  <a href="#cenik">Ceník</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+  
 </header>
 
 <section class="hero">
@@ -37,7 +39,7 @@
     </p>
 
     <div class="hero-buttons">
-      <a class="main-btn" href="tel:+420607939271">📞 Zavolat 607 939 271</a>
+      <a class="main-btn" href="tel:+420607939271">Zavolat 607 939 271</a>
       <a class="second-btn" href="#kontakt">Poslat poptávku</a>
     </div>
   </div>
@@ -122,7 +124,7 @@
 <section id="galerie" class="section">
   <h2>Galerie realizací</h2>
 
-  <div class="gallery">
+  <div class="gallery" id="gallery">
     <img src="images/galerie-01-moderni-dum.jpg" alt="Moderní dům">
     <img src="images/galerie-02-rodinny-dum.jpg" alt="Rodinný dům">
     <img src="images/galerie-03-fasada-pred-dokoncenim.jpg" alt="Fasáda před dokončením">
@@ -135,6 +137,12 @@
     <img src="images/galerie-10-pradelna.jpg" alt="Prádelna">
   </div>
 </section>
+  
+  <div id="lightbox" class="lightbox">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
 
 <section id="kontakt" class="section contact-section">
   <h2>Kontakt</h2>
@@ -144,13 +152,12 @@
       <h3>Dominik Anděl</h3>
       <p>Fasády, zednické a malířské práce</p>
 
-      <a class="big-phone" href="tel:+420607939271">📞 607 939 271</a>
+      <a class="big-phone" href="tel:+420607939271">607 939 271</a>
 
       <p><strong>Lokalita:</strong><br>Beroun a okolí</p>
     </div>
 
-    <form name="poptavka" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="poptavka">
+    <form action="kontakt.php" method="POST">
 
       <input type="text" name="jmeno" placeholder="Jméno a příjmení" required>
       <input type="tel" name="telefon" placeholder="Telefon" required>
@@ -166,5 +173,49 @@
   <p>© 2026 Dominik Anděl | Beroun a okolí</p>
 </footer>
 
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", function (event) {
+    event.stopPropagation();
+    navMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+      navMenu.classList.remove("active");
+    }
+  });
+
+  navMenu.addEventListener("click", function () {
+    navMenu.classList.remove("active");
+  });
+</script>
+
+<script>
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  galleryImages.forEach(function (image) {
+    image.addEventListener("click", function () {
+      lightbox.classList.add("active");
+      lightboxImg.src = image.src;
+      lightboxImg.alt = image.alt;
+    });
+  });
+
+  lightboxClose.addEventListener("click", function () {
+    lightbox.classList.remove("active");
+  });
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      lightbox.classList.remove("active");
+    }
+  });
+</script>
 </body>
 </html>

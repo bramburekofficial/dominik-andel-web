@@ -484,3 +484,216 @@ footer {
     height: 320px;
   }
 }
+
+/*upravení MENU, aby bylo na kraji atd...*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  margin-left: auto;
+}
+
+.menu-toggle:hover {
+  background: #333;
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  background: white;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-menu a:hover {
+  color: #666;
+}
+
+/*upravení obrázku*/
+
+.gallery img {
+  cursor: pointer;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lightbox-close:hover {
+  color: #ddd;
+}
+
+
+/*Upravení MENU na mobilu*/
+
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 18px;
+    flex-wrap: wrap;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .logo p {
+    font-size: 12px;
+  }
+
+  .menu-toggle {
+    margin-left: auto;
+    padding: 9px 13px;
+    font-size: 14px;
+  }
+
+  .nav-menu {
+    top: 100%;
+    left: 18px;
+    right: 18px;
+    width: auto;
+    padding: 16px;
+    border-radius: 14px;
+    align-items: stretch;
+  }
+
+  .nav-menu a {
+    padding: 12px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    text-align: center;
+  }
+
+  .nav-menu a:hover {
+    background: #e9e9e9;
+  }
+}
+
+
+/*kontakt.php a jeho css*/
+.result-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f1ec;
+  padding: 30px;
+}
+
+.result-card {
+  max-width: 720px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.result-card h1 {
+  margin-bottom: 12px;
+}
+
+.result-card p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.result-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+}
+
+.result-icon.success {
+  background: #2e7d32;
+}
+
+.result-icon.error {
+  background: #c62828;
+}
+
+.result-table {
+  text-align: left;
+  margin: 25px 0;
+  background: #f7f7f7;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.result-table div {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-table div:last-child {
+  border-bottom: none;
+}
