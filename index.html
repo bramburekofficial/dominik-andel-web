@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dominik Anděl | Fasády a zednické práce Beroun</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominik Anděl | Stavební práce a rekonstrukce</title>
+    <meta name="description" content="Dominik Anděl nabízí stavební práce, rekonstrukce, zednické práce a další řemeslné služby s důrazem na kvalitu a spolehlivost.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Dominik Anděl | Stavební práce a rekonstrukce">
+    <meta property="og:description" content="Stavební práce, rekonstrukce a zednické služby s důrazem na kvalitu a spolehlivost.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero-fasada.jpg">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,7 +20,7 @@
   <div class="logo">
     <span>DA</span>
     <div>
-      <h2>Dominik Anděl</h2>
+      <strong>Dominik Anděl</strong>
       <p>Fasády • Zednické práce • Malování</p>
     </div>
   </div>
@@ -45,7 +53,7 @@
   </div>
 
   <div class="hero-image">
-    <img src="images/hero-fasada.jpg" alt="Fasáda rodinného domu">
+    <img src="images/hero-fasada.jpg" alt="Fasáda rodinného domu po dokončení stavebních prací" width="1200" height="800">
   </div>
 </section>
 
@@ -125,16 +133,16 @@
   <h2>Galerie realizací</h2>
 
   <div class="gallery" id="gallery">
-    <img src="images/galerie-01-moderni-dum.jpg" alt="Moderní dům">
-    <img src="images/galerie-02-rodinny-dum.jpg" alt="Rodinný dům">
-    <img src="images/galerie-03-fasada-pred-dokoncenim.jpg" alt="Fasáda před dokončením">
-    <img src="images/galerie-04-vstup-do-domu.jpg" alt="Vstup do domu">
-    <img src="images/galerie-05-schodiste.jpg" alt="Schodiště">
-    <img src="images/galerie-06-strop-stukovani.jpg" alt="Strop a štukování">
-    <img src="images/galerie-07-koupelna-01.jpg" alt="Koupelna">
-    <img src="images/galerie-08-koupelna-02.jpg" alt="Koupelna">
-    <img src="images/galerie-09-koupelna-03.jpg" alt="Koupelna">
-    <img src="images/galerie-10-pradelna.jpg" alt="Prádelna">
+    <img src="images/galerie-01-moderni-dum.jpg" alt="Realizace moderního rodinného domu" loading="lazy">
+    <img src="images/galerie-02-rodinny-dum.jpg" alt="Dokončený rodinný dům po stavebních pracích" loading="lazy">
+    <img src="images/galerie-03-fasada-pred-dokoncenim.jpg" alt="Fasáda domu před dokončením" loading="lazy">
+    <img src="images/galerie-04-vstup-do-domu.jpg" alt="Vstup do rodinného domu po rekonstrukci" loading="lazy">
+    <img src="images/galerie-05-schodiste.jpg" alt="Realizace schodiště v rodinném domě" loading="lazy">
+    <img src="images/galerie-06-strop-stukovani.jpg" alt="Štukování stropu během stavebních prací" loading="lazy"> 
+    <img src="images/galerie-07-koupelna-01.jpg" alt="Moderní koupelna po rekonstrukci" loading="lazy">
+    <img src="images/galerie-08-koupelna-02.jpg" alt="Obložená koupelna po dokončení" loading="lazy">
+    <img src="images/galerie-09-koupelna-03.jpg" alt="Detail rekonstruované koupelny" loading="lazy">
+    <img src="images/galerie-10-pradelna.jpg" alt="Prádelna po stavebních úpravách" loading="lazy">
   </div>
 </section>
   
@@ -159,7 +167,7 @@
 
       <a class="big-phone" href="tel:+420607939271">607 939 271</a>
 
-      <p><strong>Lokalita:</strong><br>Beroun a okolí</p>
+      <p><strong>Působnost:</strong><br>Beroun a okolí</p>
     </div>
 
     <form action="kontakt.php" method="POST">
@@ -178,7 +186,7 @@
   <p>© 2026 Dominik Anděl | Beroun a okolí</p>
 </footer>
 
-/* Skript pro mobilní menu */
+ <!-- Skript pro mobilní menu -->
 
 <script>
   const menuToggle = document.getElementById("menu-toggle");
@@ -200,7 +208,7 @@
   });
 </script>
 
-/* Skript pro galerii a lightbox */
+ <!-- Skript pro galerii a lightbox -->
 
 <script>
   const galleryImages = document.querySelectorAll(".gallery img");
@@ -265,5 +273,20 @@
   if (e.key === "Escape") closeBtn.click();
 });
 </script>
+
+<!-- Strukturovaná data pro SEO -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dominik Anděl",
+  "description": "Fasády, zateplování, zednické práce a malování v Berouně a okolí.",
+  "telephone": "+420607939271",
+  "areaServed": "Beroun a okolí",
+  "url": "https://dominikandel.cz/"
+}
+</script>
+
 </body>
 </html>
