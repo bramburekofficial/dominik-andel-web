@@ -543,6 +543,32 @@ footer {
   color: #666;
 }
 
+/*upravení galerie, aby se zvětšovala a aby se dalo kliknout na obrázek a zvětšil se...*/
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 60px;
+  cursor: pointer;
+  user-select: none;
+  padding: 15px;
+}
+
+.lightbox-arrow:hover {
+  color: #ddd;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+
 /*upravení obrázku*/
 
 .gallery img {

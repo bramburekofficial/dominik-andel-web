@@ -15,6 +15,7 @@ Prezentační web pro Dominika Anděla zaměřený na:
 * rozklikávací menu
 * kontaktní formulář
 * PHP validace formuláře
+* Po vyplnění formuláře se odešle na email
 
 ## Struktura projektu
 

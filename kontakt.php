@@ -13,6 +13,28 @@ if (empty($jmeno) || empty($telefon) || empty($zprava)) {
 if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $chyba = "Zadaný e-mail není platný.";
 }
+
+$mailOdeslan = false;
+
+if (!$chyba) {
+    $komu = "tombrambora@gmail.com";
+
+    $predmet = "Nová poptávka z webu Dominik Anděl";
+
+    $textEmailu =
+    "Nová poptávka z webu:\n\n" .
+    "Jméno: $jmeno\n" .
+    "Telefon: $telefon\n" .
+    "E-mail: $email\n\n" .
+    "Zpráva:\n$zprava\n";
+
+    $hlavicky = "From: noreply@dominikandel.cz\r\n";
+    $hlavicky .= "Reply-To: $email\r\n";
+    $hlavicky .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    $mailOdeslan = mail($komu, $predmet, $textEmailu, $hlavicky);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -39,12 +61,17 @@ if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
       <h1>Poptávka byla odeslána</h1>
       <p>Děkujeme za zprávu. Ozveme se vám co nejdříve.</p>
 
-      <div class="result-table">
-        <div><strong>Jméno:</strong> <?= htmlspecialchars($jmeno) ?></div>
-        <div><strong>Telefon:</strong> <?= htmlspecialchars($telefon) ?></div>
-        <div><strong>E-mail:</strong> <?= htmlspecialchars($email) ?></div>
-        <div><strong>Zpráva:</strong><br><?= nl2br(htmlspecialchars($zprava)) ?></div>
-      </div>
+      <?php if ($mailOdeslan): ?>
+        <p style="color: green;">
+          ✓ E-mail byl úspěšně odeslán.
+        </p>
+      <?php else: ?>
+        <p style="color: orange;">
+          ⚠ Poptávka byla přijata, ale e-mail se nepodařilo odeslat.
+        </p>
+      <?php endif; ?>
+
+      
 
       <a class="main-btn" href="index.html">Zpět na web</a>
     <?php endif; ?>
