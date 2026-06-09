@@ -16,6 +16,7 @@ Prezentační web pro Dominika Anděla zaměřený na:
 * kontaktní formulář
 * PHP validace formuláře
 * Po vyplnění formuláře se odešle na email
+* Po kliknutí na "Ochrana osobních údajů" se rozklikne další stránka, kde je vše vypsáno a je zde také proklik na hlavní stránku.
 
 ## Struktura projektu
 
