@@ -821,3 +821,41 @@ footer {
 .gdpr-contact-box h2 {
     margin-top: 0;
 }
+
+
+/*další index.html pro 404*/
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #f2eee6;
+}
+
+.error-box {
+    max-width: 600px;
+    text-align: center;
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.error-code {
+    font-size: 80px;
+    font-weight: 800;
+    color: #c58a17;
+    margin: 0;
+}
+
+.error-box h1 {
+    margin: 10px 0 15px;
+    color: #1f2a38;
+}
+
+.error-box p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
