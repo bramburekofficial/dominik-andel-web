@@ -394,12 +394,72 @@ button:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-footer {
-  background: #1f2933;
-  color: white;
-  text-align: center;
-  padding: 22px;
+/*Lepší úorava footeru*/
+.site-footer {
+    background: #111820;
+    color: #ffffff;
+    padding: 55px 20px 25px;
 }
+
+.footer-content {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+}
+
+.footer-column h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c58a17;
+    margin-bottom: 22px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    color: #e8e8e8;
+    text-decoration: none;
+    margin-bottom: 13px;
+    font-size: 15px;
+}
+
+.footer-column a:hover {
+    color: #c58a17;
+}
+
+.footer-bottom {
+    max-width: 1150px;
+    margin: 35px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    color: #cfcfcf;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        text-align: center;
+    }
+}
+
+
 
 @keyframes fadeUp {
   from {
